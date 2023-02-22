@@ -66,6 +66,9 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    apitome (0.3.1)
+      kramdown
+      railties
     ast (2.4.2)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -104,6 +107,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    kramdown (2.4.0)
+      rexml
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -244,6 +249,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  apitome
   bootsnap
   byebug
   debug

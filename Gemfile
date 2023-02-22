@@ -75,4 +75,5 @@ group :test do
 end
 
 # API Documentation
+gem "apitome"
 gem "rspec_api_documentation"
