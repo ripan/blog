@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_22_212623) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_233957) do
   create_table "likes", force: :cascade do |t|
     t.string "resource_type", null: false
     t.integer "resource_id", null: false
     t.integer "count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["resource_id", "resource_type"], name: "index_likes_on_resource_id_and_resource_type", unique: true
   end
 
 end
