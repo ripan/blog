@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  data:
+    image: alpine
+    volumes:
+      - /usr/local/bundle
+    command: "/bin/true"
+  api:
+    container_name: blog-api
+    build: .
+    environment:
+      RUBYOPT: "--jit"
+    env_file: 
+      - .env
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+networks:
+  default:
+    name: blog
