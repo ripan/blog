@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :likes
+  resources :articles, only: %i[index]
 end
