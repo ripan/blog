@@ -1,16 +1,13 @@
 class Api::V1::LikesController < ApplicationController
-  # POST /likes or /likes.json
+  # POST /likes
   def create
-    @like = Like.new(like_params)
+    @like = Like.find_or_create_by(like_params)
+    @like.increment!(:count)
 
-    respond_to do |format|
-      if @like.save
-        format.html{ redirect_to like_url(@like), notice: "Like was successfully created." }
-        format.json{ render :show, status: :created, location: @like }
-      else
-        format.html{ render :new, status: :unprocessable_entity }
-        format.json{ render json: @like.errors, status: :unprocessable_entity }
-      end
+    if @like.save
+      render json: @like, status: :created
+    else
+      render json: @like.errors, status: :unprocessable_entity
     end
   end
 
@@ -18,6 +15,6 @@ class Api::V1::LikesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def like_params
-    params.require(:like).permit(:resource_type, :resource_id, :count)
+    params.fetch(:like, {}).permit(:resource_id, :resource_type)
   end
 end
