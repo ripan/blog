@@ -1,0 +1,7 @@
+POST http://localhost:3000/api/v1/likes
+content-type: application/json
+
+{
+  "resource_type": "Article",
+  "resource_id": 3899631
+}
