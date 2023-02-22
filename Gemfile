@@ -73,3 +73,6 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 5.0'
 end
+
+# API Documentation
+gem "rspec_api_documentation"
