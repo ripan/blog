@@ -1,0 +1,14 @@
+AllCops:
+  NewCops: enable
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/ArgumentsForwarding:
+  Enabled: false
+Lint/MissingSuper:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
