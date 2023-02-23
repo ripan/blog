@@ -45,3 +45,8 @@ git clone https://github.com/ripan/blog.git
 - docker-compose up
 ```
 Frontend App URL: http://localhost:4000
+
+**API playground(REST Client)** 
+- Install VS Code [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extention (if you are using VS Code)
+- Run [Articles](doc/rest_client/articles.http)
+- Run [Likes](doc/rest_client/likes.http)
