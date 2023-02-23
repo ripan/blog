@@ -1,24 +1,47 @@
-# README
+**Environment**
+|  |  |
+|--|--|
+| Rails version | 7.0.4.2  |
+| Ruby version | 2.7.6  |
+| Docker version | 20.10.21  |
+| Docker Compose version | 2.13.0  |
+| Database | sqlite3  |
+| Testing Framework | RSpec  |
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Clone The Repository**
+```
+git clone https://github.com/ripan/blog.git
+```
 
-Things you may want to cover:
+**Running BE API** 
+```
+- cd blog
+- touch .env
+- docker-compose build
+- docker-compose up
+```
+- API URL: http://localhost:3000
 
-* Ruby version
+- API Documentation URL: http://localhost:3000/api/docs
 
-* System dependencies
+**Running RSpec** 
+```
+- cd blog
+- docker exec -it blog-api bash
+- RAILS_ENV=test rspec spec
+```
+**Regenerate API Documentation** 
+```
+- cd blog
+- docker exec -it blog-api bash
+- rake docs:generate
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**Running Frontend** 
+```
+- cd blog/app/frontend
+- touch .env
+- docker-compose build
+- docker-compose up
+```
+Frontend App URL: http://localhost:4000
