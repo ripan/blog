@@ -18,6 +18,7 @@ resource "Likes" do
         do_request
 
         expect(status).to eq 201
+        expect(Like.count).to eq 1
       end
     end
 
@@ -28,6 +29,7 @@ resource "Likes" do
         do_request
 
         expect(status).to eq 422
+        expect(Like.count).to eq 0
       end
     end
   end
