@@ -41,6 +41,9 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
 end
 
+# To make cross domain AJAX calls
+gem "rack-cors"
+
 # API Documentation
 gem "apitome"
 gem "rspec_api_documentation"
