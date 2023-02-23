@@ -13,37 +13,61 @@
 git clone https://github.com/ripan/blog.git
 ```
 
-**Running BE API** 
+**Running BE API(with docker)** 
 ```
 - cd blog
 - touch .env
 - docker-compose build
 - docker-compose up
 ```
+**Running BE API(without docker)** 
+```
+- cd blog
+- rails db:create db:migrate
+- rails s
+```
+
 - API URL: http://localhost:3000
 
-- API Documentation URL: http://localhost:3000/api/docs
-
-**Running RSpec** 
+**Running RSpec(with docker)** 
 ```
 - cd blog
 - docker exec -it blog-api bash
 - RAILS_ENV=test rspec spec
 ```
-**Regenerate API Documentation** 
+**Running RSpec(without docker)** 
+```
+- cd blog
+- RAILS_ENV=test rspec spec
+```
+
+**Generate API Documentation(with docker)** 
 ```
 - cd blog
 - docker exec -it blog-api bash
 - rake docs:generate
 ```
+**Generate API Documentation(without docker)** 
+```
+- cd blog
+- rake docs:generate
+```
+- API Documentation URL: http://localhost:3000/api/docs
 
-**Running Frontend** 
+**Running Frontend(with docker)** 
 ```
 - cd blog/app/frontend
 - touch .env
 - docker-compose build
 - docker-compose up
 ```
+**Running Frontend(without docker)** 
+```
+- cd blog/app/frontend
+- npm install
+- npm start
+```
+
 Frontend App URL: http://localhost:4000
 
 **API playground(REST Client)** 
